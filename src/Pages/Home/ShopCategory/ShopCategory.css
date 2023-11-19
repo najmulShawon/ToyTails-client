@@ -1,0 +1,13 @@
+.tabs {
+  cursor: pointer;
+  padding-inline: 10px;
+  font-size: 20px;
+}
+
+.active-tabs {
+  border: none;
+  border-bottom: 2px solid orange;
+  color: orange;
+  padding-inline: 10px;
+  font-size: 20px;
+}
