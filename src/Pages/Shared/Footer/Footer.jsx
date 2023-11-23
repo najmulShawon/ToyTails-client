@@ -39,7 +39,7 @@ const Footer = () => {
             999 Hamilton Street
             <br /> Silicon Valley, USA 7823
             <br /> Phone: 213-115-014
-            <br /> Email: tanvirbinsiraj.edu.bd@gmail.com
+            <br /> Email: najmulshawon360@gmail.com
           </p>
         </div>
       </footer>
