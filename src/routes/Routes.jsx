@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
-
+import Login from "../pages/Login/Login";
+import SignUp from "../pages/SignUp/SignUp";
 import ViewDetails from "../pages/ViewDetails/ViewDetails";
 import PrivateRoute from "./PrivateRoute";
-import SignUp from "../pages/Shared/SignUp/SignUp";
-import Login from "../pages/Login/Login";
+import MyCart from "../pages/MyCart/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +26,15 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/mycart",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "toy/:id",

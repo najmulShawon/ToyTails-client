@@ -4,9 +4,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import "./Navbar.css";
 import ActiveLink from "../ActiveLink/ActiveLink";
+import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const handleLogOut = () => {
     logOut()
@@ -21,7 +24,14 @@ const Navbar = () => {
       <ActiveLink className="ms-0 lg:ms-8 font-bold mt-6 lg:mt-0" to="/">
         Home
       </ActiveLink>
-
+      <ActiveLink className="ms-0 lg:ms-8 font-bold mt-6 lg:mt-0 " to="/mycart">
+        <button className="btn bg-transparent border-none  hover:bg-transparent ">
+          <div className="flex items-center text-black capitalize">
+            <FaShoppingCart className="text-black text-lg" />
+            <div className="badge relative bottom-2">{cart.length}</div>
+          </div>
+        </button>
+      </ActiveLink>
       <ActiveLink to="/login" className="ms-0 lg:ms-8 mt-6 lg:mt-0 font-bold">
         <button className="btn bg-[rgb(203,62,6)] mt-6 lg:mt-0 text-white border-0 px-6">
           Login
@@ -33,6 +43,14 @@ const Navbar = () => {
     <div className="flex flex-col lg:flex-row lg:items-center text-black">
       <ActiveLink className="ms-0 lg:ms-8 font-bold mt-6 lg:mt-0" to="/">
         Home
+      </ActiveLink>
+      <ActiveLink className="ms-0 lg:ms-8 font-bold mt-6 lg:mt-0 " to="/mycart">
+        <button className="btn bg-transparent border-none  hover:bg-transparent">
+          <div className="flex items-center text-black capitalize">
+            <FaShoppingCart className="text-black text-lg" />
+            <div className="badge relative bottom-2">{cart.length}</div>
+          </div>
+        </button>
       </ActiveLink>
 
       <div className="w-10 rounded-full ms-6 lg:me-2 lg:ms-8 mt-6 lg:mt-2 ">
